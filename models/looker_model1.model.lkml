@@ -4,11 +4,15 @@ connection: "ritesh_neon_connection"
 include: "/views/**/*.view.lkml"
 
 datagroup: looker_model1_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
 persist_with: looker_model1_default_datagroup
 
+# Existing Explore
 explore: looker_test_data {}
 
+# Add this new Explore for the cars data
+explore: car_production {
+  label: "Car Manufacturing Data"
+}
